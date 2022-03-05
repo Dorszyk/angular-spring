@@ -10,4 +10,7 @@ export class HttpService {
 getCountries(): Observable<any>{
   return this.http.get('http://localhost:8080/countries')
 }  
+addCountry(data): Observable<any>{
+  return this.http.post('http://localhost:8080/countries', data)
+}
 }
