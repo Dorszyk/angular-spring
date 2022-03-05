@@ -1,0 +1,18 @@
+<div class="mb-4">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">Your name</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link" [routerLink]="'/home'">HOME</a>
+                <a href="#" class="nav-item nav-link" [routerLink]="'/table'">TABLE</a>
+                <a href="#" class="nav-item nav-link" [routerLink]="'/form'">FORM</a>
+            </div>
+        </div>
+    </nav>
+  </div>
+
+  <router-outlet></router-outlet>
