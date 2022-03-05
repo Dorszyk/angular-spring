@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class FormComponent implements OnInit {
   [x: string]: any;
 form: FormGroup;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -21,6 +22,7 @@ form: FormGroup;
       flag: new FormControl(),
       countryCapital: new FormControl()
     })
+    this.route.params
   }
   onSubmit(): void {
     console.log(this.form.value)
