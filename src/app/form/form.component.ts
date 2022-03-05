@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 
@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+  arrayOfFlags = [{name: 'Poland', value: "../../assets/poland.png"}, {name: 'Germany', value: '../../assets/germany.png'}, {name: 'Bhutan', value: '../../assets/bhutanFlag.png'}, {name: 'Nepal', value: '../../assets/nepalFlag.png'}, {name: 'China', value: '../../assets/chinaFlag.png'}, {name: 'India', value: '../../assets/indiaFlag.png'}]
   form: FormGroup;
   id: number;
   constructor(
@@ -18,7 +19,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       id: new FormControl(),
-      countryName: new FormControl(),
+      countryName: new FormControl(null,Validators.required),
       population: new FormControl(),
       flag: new FormControl(),
       countryCapital: new FormControl(),
