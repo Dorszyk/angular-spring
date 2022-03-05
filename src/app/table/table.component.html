@@ -10,11 +10,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>test text</td>
-                <td>test text</td>
-                <td>test text</td>
-                <td>test text</td>
+            <tr *ngFor="let country of countries; let i = index">
+                <td>{{country.id}}</td>
+                <td>{{country.countryName}}</td>
+                <td>{{country.countryCapital}}</td>
+                <td>{{country.population}}</td>
+                <td><img [src] = "country.flag" style="height: 50px" ></td>
             </tr>
                   
         </tbody>

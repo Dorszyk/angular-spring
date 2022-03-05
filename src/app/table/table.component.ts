@@ -7,11 +7,11 @@ import { HttpService } from '../http.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-countries: Array<unknown> = [];
+countries: Array<any> = [];
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    this.httpService.getCountries().subscribe((data: Array<unknown>) => {
+    this.httpService.getCountries().subscribe((data: Array<any>) => {
       this.countries = data;
     })
   }

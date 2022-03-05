@@ -7,7 +7,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
  
-getCountries(): Observable<unknown>{
+getCountries(): Observable<any>{
   return this.http.get('http://localhost:8080/countries')
 }  
 }
